@@ -1,0 +1,17 @@
+{
+  "device": "gabinete-01",
+  "demo": false,
+  "interval_seconds": 30,
+  "internal_rom": "28-000000000001",
+  "external_rom": "28-000000000002",
+  "battery_gain": 11.1,
+  "battery_offset": 0.0,
+  "serial_port": "/dev/serial/by-id/SUBSTITUIR",
+  "modbus_id": 1,
+  "baud": 9600,
+  "parity": "N",
+  "stopbits": 1,
+  "local_db": "/var/lib/monitorraspberry/local.sqlite3",
+  "server_url": "https://monitor.exemplo.com.br",
+  "upload_token": "SUBSTITUIR"
+}

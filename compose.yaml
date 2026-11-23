@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      SERVER_DB: /data/server.sqlite3
+      READ_TOKEN: ${READ_TOKEN:?Configure READ_TOKEN}
+      UPLOAD_TOKEN: ${UPLOAD_TOKEN:?Configure UPLOAD_TOKEN}
+    volumes:
+      - telemetry:/data
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      MONITOR_DOMAIN: ${MONITOR_DOMAIN:?Configure MONITOR_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+volumes:
+  telemetry:
+  caddy_data:

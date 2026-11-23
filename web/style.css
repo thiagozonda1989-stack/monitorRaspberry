@@ -1,0 +1,17 @@
+:root { color-scheme: dark; font: 16px system-ui, sans-serif; background: #0d1522; color: #e5eef9; }
+body { margin: 0; }
+main { max-width: 1080px; margin: 3rem auto; padding: 0 1.2rem; }
+header { border-bottom: 1px solid #2f435a; margin-bottom: 1.5rem; }
+h1 { font-size: clamp(1.9rem, 5vw, 3rem); margin: 0; }
+p { color: #afc0d5; }
+.controls, form { display: flex; flex-wrap: wrap; gap: 1rem; align-items: end; }
+form[hidden], section[hidden] { display: none; }
+label { display: grid; gap: .4rem; }
+button, input, select { font: inherit; padding: .55rem .75rem; border-radius: .5rem; border: 1px solid #405771; }
+button { color: #071c19; background: #29d7bc; cursor: pointer; font-weight: 650; }
+button:disabled { opacity: .5; cursor: default; }
+#cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 370px), 1fr)); gap: 1rem; }
+article { background: #152338; border: 1px solid #2f435a; border-radius: .9rem; padding: 1.25rem; }
+h2 { color: #afc0d5; font-size: .95rem; margin: 0 0 .5rem; }
+strong { font-size: clamp(1.35rem, 4vw, 2.1rem); }
+canvas { width: 100%; display: block; margin-top: 1rem; }

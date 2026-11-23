@@ -1,0 +1,21 @@
+[Unit]
+Description=Monitor Raspberry (%i)
+After=local-fs.target
+
+[Service]
+Type=simple
+User=monitorraspberry
+Group=monitorraspberry
+SupplementaryGroups=i2c dialout
+StateDirectory=monitorraspberry
+StateDirectoryMode=0700
+ExecStart=/usr/bin/python3 /opt/monitorraspberry/monitor.py %i /etc/monitorraspberry/config.json
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

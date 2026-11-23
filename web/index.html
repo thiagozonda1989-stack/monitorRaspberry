@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monitor de gabinete</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><h1>Monitor de gabinete</h1><p id="status" role="status">Informe o token de leitura.</p></header>
+  <form id="access">
+    <label>Token de leitura <input id="token" type="password" required autocomplete="off"></label>
+    <button>Conectar</button>
+  </form>
+  <section id="panel" hidden>
+    <div class="controls">
+      <label>Gabinete <select id="device"></select></label>
+      <label>Histórico <select id="limit"><option value="120">120 leituras</option><option value="480" selected>480 leituras</option><option value="2880">2.880 leituras</option></select></label>
+      <button id="download" disabled>Exportar CSV</button>
+    </div>
+    <p id="updated"></p>
+    <div id="cards"></div>
+  </section>
+</main>
+</body>
+</html>
