@@ -1,21 +1,15 @@
+# O plano Free tem disco efêmero. O envio fica desativado até a configuração
+# de um armazenamento persistente externo. Não configurar UPLOAD_TOKEN aqui.
 services:
   - type: web
     name: monitorraspberry
     runtime: docker
     region: virginia
-    plan: starter
+    plan: free
     branch: main
     healthCheckPath: /healthz
-    disk:
-      name: telemetry
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: PORT
         value: "8080"
-      - key: SERVER_DB
-        value: /var/data/server.sqlite3
       - key: READ_TOKEN
-        generateValue: true
-      - key: UPLOAD_TOKEN
         generateValue: true
